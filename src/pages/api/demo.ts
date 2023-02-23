@@ -11,13 +11,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 	if (!widget.ok) res.redirect(`https://clippy.help`)
 
 	res.setHeader('Content-Type', 'text/html; charset=utf-8')
-	res.status(200).send(
+	res.send(
 		`<html>
             <head>
-                <style>body { margin: 0; } iframe { width: 100vw; height: 100vh; margin: 0; border: 0; }</style>
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <style>body { margin: 0; } iframe { width: 100%; height: 100%; margin: 0; border: 0; }</style>
             </head>
             <body>
-                <iframe src="https://${domain}" style="width: 100%; height: 100%; border: none;"></iframe>
+                <iframe src="https://${domain}"></iframe>
                 <script src="https://unpkg.com/clippy-widget@latest"></script>
             </body>
         </html>`
