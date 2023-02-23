@@ -5,7 +5,7 @@ const nextConfig = {
 		return [{ source: '/', destination: 'https://clippy.help', permanent: true }]
 	},
 	rewrites: async () => {
-		return [{ source: '/:domain', destination: '/api/demo?domain=:domain' }]
+		return [{ source: '/:url*', destination: '/api/demo?url=:url*' }]
 	},
 }
 
