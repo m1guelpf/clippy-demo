@@ -19,6 +19,7 @@ const handler = async (req: NextRequest) => {
             <head>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <style>body { margin: 0; } iframe { width: 100%; height: 100%; margin: 0; border: 0; }</style>
+                <base href="https://${host}">
             </head>
             <body>
                 <iframe src="https://${url}"></iframe>
