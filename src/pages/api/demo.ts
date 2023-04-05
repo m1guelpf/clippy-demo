@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 
 const handler = async (req: NextRequest) => {
 	const url = req.nextUrl.searchParams.get('url')
+	const theme = req.nextUrl.searchParams.get('theme') ?? 'dark'
 
 	let host: string
 	try {
@@ -23,7 +24,7 @@ const handler = async (req: NextRequest) => {
             </head>
             <body>
                 <iframe src="https://${url}"></iframe>
-                <script src="https://unpkg.com/clippy-widget@latest"></script>
+                <script src="https://unpkg.com/clippy-widget@latest" id="clippy-script" async data-theme="${theme}"></script>
             </body>
         </html>`,
 		{
